@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private String strInput_1 = "";
     private String strInput_2 = "";
     private String strOperation = "";
-    private String answer;
+    private String answer = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
