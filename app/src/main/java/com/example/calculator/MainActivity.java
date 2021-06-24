@@ -152,7 +152,9 @@ public class MainActivity extends AppCompatActivity {
     public void showOperation(View v, String op) {
         if (!answer.equals("")) {
             strInput_1=answer;
+            strInput_2="";
             v_input_1.setText(answer);
+            v_input_2.setText(strInput_2);
             v_input_1.setTextSize(50);
             v_input_1.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         }
@@ -178,7 +180,13 @@ public class MainActivity extends AppCompatActivity {
         else if (operation.equals("/")) {
             d_answer = d_input1/d_input2;
         }
-        answer=Double.toString(d_answer);
+        if (d_answer % 1.0 == 0) {
+            int i_answer = (int) Math.round(d_answer);
+            answer=Integer.toString(i_answer);
+        }
+        else {
+            answer=Double.toString(d_answer);
+        }
         v_answer.setText(answer);
         v_answer.setTextSize(50);
         v_answer.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
